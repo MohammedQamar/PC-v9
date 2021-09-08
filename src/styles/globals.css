@@ -1,9 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300&family=Open+Sans:wght@400;600;700&display=swap");
+
+:root {
+  --primary-bcg: #000000;
+  --primary-font: #ffffff;
+  --secondary-font: #ddd;
+  --button-bcg: #ff2500;
+  --button-font: #ffffff;
+  --button-border: #c20027;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
+  background-color: var(--primary-bcg);
+  color: var(--primary-font);
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Merriweather", serif;
+  font-size: clamp(16px, 2.3vmin, 17px);
+}
+h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+h3 {
+  font-size: clamp(1.2rem, 3.5vw, 1.75rem);
+}
+h4 {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+h5 {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Open Sans", sans-serif;
+  color: var(--primary-font);
 }
 
 a {
@@ -11,6 +52,57 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+p {
+  line-height: 1.8;
+  color: #ddd;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+html::-webkit-scrollbar-thumb {
+  background: #434343;
+  border-radius: 16px;
+  box-shadow: inset 2px 2px 2px hsl(0deg 0% 100% / 25%),
+    inset -2px -2px 2px rgb(0 0 0 / 25%);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+button {
+  display: inline-block;
+  padding: 0.8em 1.6em;
+  border-radius: 3px;
+  text-align: center;
+  margin-top: 20px;
+  background-color: var(--button-bcg);
+  color: var(--button-font);
+  line-height: 22px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  border-bottom: 3px solid #c20027;
+  text-transform: uppercase;
+}
+
+.pane {
+  display: flex;
+  background-color: white;
+}
+.gutter {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.split {
+  height: calc(100vh - 70px);
+}
+
+.gutter.gutter-vertical {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
+  cursor: row-resize;
 }
